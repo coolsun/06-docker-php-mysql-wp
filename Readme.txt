@@ -49,9 +49,10 @@ E. Start up
   import data 
 4. Copy your code to code directory
 5. Create mysql db
-   5.0 access database: mysql -u root -h localhost -p 33x6
+   5.0 access database: mysql -u root -ppassword -h localhost -P 33x6 --protocol=tcp
    5.1 import from data/wordpress.4.9.8_root_password.sql.gz
-       mysql -u root -h localhost -p 33x6 < wordpress.4.9.8_root_password.sql
+       mysql -u root -h localhost -P 33x6 --protocol=tcp < wordpress.4.9.8_root_password.sql
+       Or import from phpadmin8x80
    5.2 Or Create database from phpmyadmin8x80
        select utf8_general_ci
        database name = wordpress
