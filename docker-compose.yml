@@ -22,14 +22,14 @@ services:
       - ./code:/code
     image: php9600:7.0-fpm
     environment:
-      XDEBUG_CONFIG: remote_host=host.docker.internal
+      XDEBUG_CONFIG: remote_host=172.17.0.1
     links:
       - mysql5.6-3366
       - maildev8690
   mysql5.6-3366:
     image: mysql:5.6
     volumes:
-      - mysql5.6-3366:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
     container_name: mysql5.6-3366 
     ports:
       - "3366:3306"
@@ -51,5 +51,3 @@ services:
     container_name: maildev8690 
     ports:
      - "8690:80"
-volumes:
-  mysql5.6-3366:
